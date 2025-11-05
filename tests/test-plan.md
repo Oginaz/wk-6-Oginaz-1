@@ -6,7 +6,7 @@
 **Date:** November 5, 2025  
 **Project:** CleanCity - Waste Pickup Scheduler  
 **Prepared By:** QA Testing Team  
-**Status:** Draft  
+**Status:** Final  
 
 ---
 
@@ -566,11 +566,10 @@ Testing can be concluded when:
 **Test Plan Reviewed By:** Joel Githara
 **Date:** November 5,2025
 
-**Test Plan Approved By:** _________________  
-**Date:** _________________  
+**Test Plan Approved By:** Isaac Nyarko Okai 
+**Date:** November 5, 2025
 
 ---
 
-**Document Status:** Draft  
-**Last Updated:** November 5, 2025  
-**Next Review Date:** November 11, 2025
+**Document Status:** Final 
+**Last Updated:** November 5, 2025
