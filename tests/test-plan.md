@@ -581,8 +581,8 @@ Testing can be concluded when:
 **Test Plan Prepared By:** Sammy Shoka  
 **Date:** November 4, 2025  
 
-**Test Plan Reviewed By:** _________________  
-**Date:** _________________  
+**Test Plan Reviewed By:** Joel Githara
+**Date:** November 5,2025
 
 **Test Plan Approved By:** _________________  
 **Date:** _________________  
