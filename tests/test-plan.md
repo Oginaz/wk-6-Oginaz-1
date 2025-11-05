@@ -118,7 +118,6 @@ The testing strategy covers all functional and non-functional requirements for t
 - ❌ Database testing (no backend database)
 - ❌ Mobile app testing (web application only)
 - ❌ Third-party integrations testing
-- ❌ Automated test suite development (optional bonus)
 
 ---
 
@@ -469,14 +468,7 @@ Testing can be concluded when:
 - **Communication:** Attend weekly meetings and provide status updates
 - **Collaboration:** Share findings and assist team members
 - **Quality Assurance:** Review peer work and provide feedback
-
-### **Communication Protocol**
-
-- **Weekly Meetings:** Every Wednesday (10 minutes per group)
-- **Daily Stand-ups:** Team coordination (5 minutes)
-- **Documentation Updates:** Real-time updates in shared repository
-- **Issue Escalation:** Use Jira/GitHub for tracking and communication
-
+  
 ---
 
 ## **Weekly Milestones**
@@ -565,16 +557,6 @@ Testing can be concluded when:
 
 ---
 
-## 📚 **References**
-
-- [Functional Requirements Specification](../docs/functional-requirements.md)
-- [Test Data Document](../docs/test-data.md)
-- [Technical Specifications](../docs/technical-specs.md)
-- [Submission Guidelines](../docs/submission.md)
-- [Project README](../docs/README.md)
-- [Jira Setup Guide](../docs/jira-setup.md)
-
----
 
 ## ✅ **Approval**
 
