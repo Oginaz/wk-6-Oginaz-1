@@ -578,8 +578,8 @@ Testing can be concluded when:
 
 ## ✅ **Approval**
 
-**Test Plan Prepared By:** _________________  
-**Date:** _________________  
+**Test Plan Prepared By:** Sammy Shoka  
+**Date:** November 4, 2025  
 
 **Test Plan Reviewed By:** _________________  
 **Date:** _________________  
