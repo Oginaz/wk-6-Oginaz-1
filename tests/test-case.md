@@ -6,6 +6,29 @@ Source Data: docs/test-data.md, docs/functional-requirements.md
 
 ---
 
+### Summary
+
+- Total test cases: 51
+- By area:
+  - Authentication: 7
+  - Pickup Scheduling: 7
+  - Dashboard and Analytics: 3
+  - Admin: 4
+  - Blog: 3
+  - Community Feed: 3
+  - Notifications: 2
+  - Profile: 2
+  - Validation and Error Handling: 3
+  - Accessibility (WCAG 2.1 AA): 4
+  - Performance: 4
+  - Security: 3
+  - Compatibility and Responsiveness: 3
+  - Negative and Edge Cases: 3
+
+Use this suite with the test data in `docs/test-data.md` and record outcomes in `tests/defect-log.md` and the final report.
+
+---
+
 ### Legend
 
 - Columns: ID | Title | Preconditions | Test Data | Steps | Expected Result
