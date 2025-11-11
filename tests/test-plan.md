@@ -3,10 +3,10 @@
 ## 📋 **Document Information**
 
 **Document Version:** 1.0  
-**Date:** November 11, 2025  
+**Date:** November 5, 2025  
 **Project:** CleanCity - Waste Pickup Scheduler  
 **Prepared By:** QA Testing Team  
-**Status:** Draft  
+**Status:** Final  
 
 ---
 
@@ -118,7 +118,6 @@ The testing strategy covers all functional and non-functional requirements for t
 - ❌ Database testing (no backend database)
 - ❌ Mobile app testing (web application only)
 - ❌ Third-party integrations testing
-- ❌ Automated test suite development (optional bonus)
 
 ---
 
@@ -469,14 +468,7 @@ Testing can be concluded when:
 - **Communication:** Attend weekly meetings and provide status updates
 - **Collaboration:** Share findings and assist team members
 - **Quality Assurance:** Review peer work and provide feedback
-
-### **Communication Protocol**
-
-- **Weekly Meetings:** Every Wednesday (10 minutes per group)
-- **Daily Stand-ups:** Team coordination (5 minutes)
-- **Documentation Updates:** Real-time updates in shared repository
-- **Issue Escalation:** Use Jira/GitHub for tracking and communication
-
+  
 ---
 
 ## **Weekly Milestones**
@@ -595,17 +587,16 @@ Testing can be concluded when:
 
 ## ✅ **Approval**
 
-**Test Plan Prepared By:** _________________  
-**Date:** _________________  
+**Test Plan Prepared By:** Sammy Shoka  
+**Date:** November 4, 2025  
 
-**Test Plan Reviewed By:** _________________  
-**Date:** _________________  
+**Test Plan Reviewed By:** Joel Githara
+**Date:** November 5,2025
 
-**Test Plan Approved By:** _________________  
-**Date:** _________________  
+**Test Plan Approved By:** Isaac Nyarko Okai 
+**Date:** November 5, 2025
 
 ---
 
-**Document Status:** Draft  
-**Last Updated:** November 11, 2025  
-**Next Review Date:** November 11, 2025
+**Document Status:** Final 
+**Last Updated:** November 5, 2025
