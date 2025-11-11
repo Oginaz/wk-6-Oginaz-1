@@ -590,13 +590,16 @@ Testing can be concluded when:
 **Test Plan Prepared By:** Sammy Shoka  
 **Date:** November 4, 2025  
 
+**Test Plan Updated By:** Isaac Nyarko Okai  
+**Date:** November 11, 2025  
+
 **Test Plan Reviewed By:** Joel Githara
 **Date:** November 5,2025
 
 **Test Plan Approved By:** Isaac Nyarko Okai 
-**Date:** November 5, 2025
+**Date:** November 11, 2025
 
 ---
 
-**Document Status:** Final 
-**Last Updated:** November 5, 2025
+**Document Status:** In-Progress 
+**Last Updated:** November 11, 2025
