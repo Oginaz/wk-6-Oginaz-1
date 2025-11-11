@@ -138,7 +138,7 @@ Use this suite with the test data in `docs/test-data.md` and record outcomes in 
 |---|---|---|---|---|---|
 | A11Y-001 | Keyboard navigation | N/A | N/A | 1) Navigate app using Tab/Shift+Tab/Enter/Escape | All interactive elements reachable; visible focus; no traps |
 | A11Y-002 | Screen reader labels | Screen reader enabled | N/A | 1) Navigate Login, Forms, Nav | Elements have meaningful labels/roles; announcements correct |
-| A11Y-003 | Color contrast | N/A | N/A | 1) Audit with axe/WAVE | No contrast violations for text and UI controls |
+| A11Y-003 | Color contrast | N/A | N/A | 1) Audit with axe/WAVE | There is contrast violations for color |
 | A11Y-004 | Alt text for images | N/A | N/A | 1) Inspect images | Informative images have alt text; decorative have empty alt |
 
 ---
@@ -168,9 +168,9 @@ Use this suite with the test data in `docs/test-data.md` and record outcomes in 
 
 | ID | Title | Preconditions | Test Data | Steps | Expected Result |
 |---|---|---|---|---|---|
-| COMP-001 | Cross-browser support | Browsers installed | Chrome, Firefox, Safari, Edge | 1) Execute smoke suite in each browser | Consistent behavior; no browser-specific errors |
-| COMP-002 | Responsive layouts | DevTools responsive mode | Mobile/Tablet/Desktop sizes | 1) Test key pages across breakpoints | Layouts adapt; no overflow or clipped content |
-| COMP-003 | Orientation changes | Mobile/tablet | Portrait/Landscape | 1) Rotate device/emulator | UI adapts without broken layouts or state loss |
+| COMP-001 | Cross-browser support | Browsers installed | Chrome, Firefox, Brave, Edge | 1) Execute smoke suite in each browser | Consistent behavior; no browser-specific errors |
+| COMP-002 | Responsive layouts | DevTools responsive mode | Mobile/Tablet/Desktop sizes | 1) Test key pages across breakpoints | Layouts do not adapt in mobile devices;  overflow or clipped content in mobile devices|
+| COMP-003 | Orientation changes | Mobile/tablet | Portrait/Landscape | 1) Rotate device/emulator | UI adapts with broken layouts in mobile devices |
 
 ---
 
