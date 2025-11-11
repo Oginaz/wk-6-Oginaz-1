@@ -2,7 +2,7 @@
 
 ## 📋 **Document Information**
 
-**Document Version:** 1.0  
+**Document Version:** 2.0  
 **Date:** November 5, 2025  
 **Project:** CleanCity - Waste Pickup Scheduler  
 **Prepared By:** QA Testing Team  
@@ -481,6 +481,21 @@ Testing can be concluded when:
 
 ---
 
+## 📁 **Test Artifacts**
+
+- Test Plan: `tests/test-plan.md` (this document)
+- Test Cases: `tests/test-case.md`
+- Defect Log: `tests/defect-log.md`
+- Final Test Report (to be produced): `tests/final-report.md`
+- Test Execution Log (optional): `tests/test-execution.md`
+
+### Artifacts by Phase
+- Phase 1 (Planning): `tests/test-plan.md`
+- Phase 2 (Design & Early Execution): `tests/test-case.md`, initial `tests/defect-log.md`
+- Phase 3 (Execution & Reporting): Updated `tests/test-case.md`, updated `tests/defect-log.md`, `tests/final-report.md`, optional `tests/test-execution.md`
+
+---
+
 ## 📊 **Test Metrics and KPIs**
 
 ### **Test Execution Metrics**
@@ -557,19 +572,34 @@ Testing can be concluded when:
 
 ---
 
+## 📚 **References**
+
+- [Functional Requirements Specification](../docs/functional-requirements.md)
+- [Test Data Document](../docs/test-data.md)
+- [Technical Specifications](../docs/technical-specs.md)
+- [Submission Guidelines](../docs/submission.md)
+- [Project README](../docs/README.md)
+- [Jira Setup Guide](../docs/jira-setup.md)
+- [Test Cases](./test-case.md)
+- [Defect Log](./defect-log.md)
+
+---
 
 ## ✅ **Approval**
 
 **Test Plan Prepared By:** Sammy Shoka  
 **Date:** November 4, 2025  
 
+**Test Plan Updated By:** Isaac Nyarko Okai  
+**Date:** November 11, 2025  
+
 **Test Plan Reviewed By:** Joel Githara
 **Date:** November 5,2025
 
 **Test Plan Approved By:** Isaac Nyarko Okai 
-**Date:** November 5, 2025
+**Date:** November 11, 2025
 
 ---
 
-**Document Status:** Final 
-**Last Updated:** November 5, 2025
+**Document Status:** In-Progress 
+**Last Updated:** November 11, 2025
