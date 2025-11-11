@@ -10,12 +10,12 @@ Scope: Results against `tests/test-case.md` (total 51 cases)
 
 - Total: 51
 - Passed: 6
-- Failed: 5
+- Failed: 6
 - Blocked: 0
-- Not Run: 40
+- Not Run: 39
 
 Pass Rate = 6 / 51 ≈ 11.8%  
-Fail Rate = 5 / 51 ≈ 9.8%
+Fail Rate = 6 / 51 ≈ 11.8%
 
 ---
 
@@ -24,11 +24,11 @@ Fail Rate = 5 / 51 ≈ 9.8%
 | Area | Total | Passed | Failed | Blocked | Not Run |
 |---|---:|---:|---:|---:|---:|
 | Authentication | 7 | 2 | 0 | 0 | 5 |
-| Pickup Scheduling | 7 | 0 | 2 | 0 | 5 |
+| Pickup Scheduling | 7 | 0 | 1 | 0 | 6 |
 | Dashboard & Analytics | 3 | 0 | 2 | 0 | 1 |
 | Admin | 4 | 0 | 0 | 0 | 4 |
-| Blog | 3 | 0 | 0 | 0 | 3 |
-| Community | 3 | 0 | 0 | 0 | 3 |
+| Blog | 3 | 0 | 1 | 0 | 2 |
+| Community | 3 | 0 | 1 | 0 | 2 |
 | Notifications | 2 | 0 | 0 | 0 | 2 |
 | Profile | 2 | 0 | 1 | 0 | 1 |
 | Validation & Errors | 3 | 2 | 0 | 0 | 1 |
@@ -62,10 +62,11 @@ Notes:
 | ID | Title | Status | Evidence/Notes |
 |---|---|---|---|
 | PICK-001 | Schedule pickup with valid data | Failed | Success message shows, but request not found in any list |
-| PICK-006 | Cancel pending request | Failed | No request exists post-submit to cancel |
 | DASH-001 | Dashboard shows recent and upcoming pickups | Failed | Totals/lists do not reflect existing requests |
 | DASH-002 | Environmental metrics compute correctly | Failed | Metrics empty/zero despite activity |
 | PROF-001 | View and edit profile (requests visibility) | Failed | “My Requests” remains empty after creating requests |
+| COMM-003 | Comment on a post | Failed | Comment disappears after page refresh |
+| BLOG-003 | Admin creates/edits post | Failed | No visible way to create a blog post as admin |
 
 ---
 
