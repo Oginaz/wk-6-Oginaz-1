@@ -414,7 +414,7 @@ Testing can be concluded when:
 
 ### **Role Assignments**
 
-#### **Team Member 1: Test Lead / Functional Testing Specialist**
+#### **Team Member 1: Test Lead / Functional Testing Specialist - Isaac Okai(Test Manager)**
 **Responsibilities:**
 - Overall test planning and coordination
 - Functional testing execution
@@ -429,7 +429,7 @@ Testing can be concluded when:
 - Dashboard and analytics
 - Admin panel functions
 
-#### **Team Member 2: Non-Functional Testing Specialist**
+#### **Team Member 2: Non-Functional Testing Specialist - Joel Githara(Test Executor)**
 **Responsibilities:**
 - Performance testing
 - Security testing
@@ -445,7 +445,7 @@ Testing can be concluded when:
 - Usability evaluation
 - Network condition testing
 
-#### **Team Member 3: Accessibility & Compatibility Specialist**
+#### **Team Member 3: Accessibility & Compatibility Specialist - Sammy Shoka(Risk Analyst)**
 **Responsibilities:**
 - Accessibility testing (WCAG 2.1)
 - Mobile/responsive testing
@@ -460,6 +460,7 @@ Testing can be concluded when:
 - Mobile device testing
 - Responsive design validation
 - Accessibility tool results
+- Keyboard navigation testing
 
 ### **Shared Responsibilities**
 
@@ -581,11 +582,11 @@ Testing can be concluded when:
 **Test Plan Prepared By:** Sammy Shoka  
 **Date:** November 4, 2025  
 
-**Test Plan Reviewed By:** _________________  
-**Date:** _________________  
+**Test Plan Reviewed By:** Joel Githara 
+**Date:** November 5, 2025  
 
-**Test Plan Approved By:** _________________  
-**Date:** _________________  
+**Test Plan Approved By:** Isaac Okai  
+**Date:** November 5, 2025  
 
 ---
 
