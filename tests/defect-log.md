@@ -43,7 +43,7 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 | BUG-004 | Profile “My Requests” tab remains empty after creating requests | Profile | Minor | Medium | Edge 119 / Win11 | Create one or more pickup requests | 1. Create a pickup request 2. Open Profile 3. Switch to “My Requests” | Newly created requests should be listed | The list is empty | Open | Unassigned | 2025-11-11 | Screenshot of Profile tab | User cannot see own requests in profile |
 | BUG-005 | “Requests Per Month” chart shows no bars despite requests created | Dashboard | Minor | Low | Chrome 142 / Win11 | At least one request created with a date | 1. Create a pickup request 2. Open Dashboard 3. Check Requests Per Month chart | Chart displays bars for months with requests | Chart renders with no bars | Open | Unassigned | 2025-11-11 | Screenshot of empty chart | Visual metric does not represent current requests |
 | BUG-006 | Save button fails WCAG 2.1 AA required color contrast ratio | Dashboard | Major | Medium | Google Chrome Version 142 | axe DEV Tools Installed | 1. Open the Dashboard page at http://localhost:3000/dashboard  2. Open Chrome DevTools → axe DevTools i.e press F12 3. Run an accessibility scan 4. View the issue: “Elements must meet minimum color contrast ratio thresholds” | Button text should have a contrast ratio of at least 4.5 : 1 |The Save button contrast ratio is 1.98 : 1 (FAIL) | Open | Unassigned | 2025-11-17 | | Serious readability issue for users with visual impairments |
-| BUG-007 | | | | | | | | | | | | | | |
+| BUG-007 | Page lacks proper heading structure , causing accessibility failure | App | Medium |Medium | Google Chrome Version 142 | WAVE Accessibility Tool installed | 1. Go to https://cleancityprj.netlify.app/ 2. Open WAVE extension  3. Scan the page 4. Observe the alert: “No heading structure” | Page should have a logical heading hierarchy | No heading structure | Open | Unassigned | 2025-11-17 | | The page does not contain a valid heading structure |
 
 ---
 
@@ -52,7 +52,7 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 - FR-025 Analytics accuracy: BUG-001, BUG-005  
 - FR-016/019 Request management visibility: BUG-002, BUG-004  
 - FR-012 Scheduling persistence: BUG-002  
-- Non-functional data integrity/consistency: BUG-001, BUG-004, BUG-005
+- Non-functional data integrity/consistency: BUG-001, BUG-004, BUG-005, BUG-006, BUG-007
 
 ---
 
