@@ -42,7 +42,7 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 | BUG-003 | Unable to create a blog post anywhere in the app (even as Admin) | Blog | Major | High | Chrome 142 / Win11 | Logged in as admin | 1. Log in as admin 2. Navigate through Blog and related admin routes 3. Attempt to create a new post | There should be a clear way for admins to create a blog post | No visible option or screen to create a blog post | Open | Unassigned | 2025-11-11 | Screenshots of Blog views and nav | Creation capability not accessible from UI |
 | BUG-004 | Profile “My Requests” tab remains empty after creating requests | Profile | Minor | Medium | Edge 119 / Win11 | Create one or more pickup requests | 1. Create a pickup request 2. Open Profile 3. Switch to “My Requests” | Newly created requests should be listed | The list is empty | Open | Unassigned | 2025-11-11 | Screenshot of Profile tab | User cannot see own requests in profile |
 | BUG-005 | “Requests Per Month” chart shows no bars despite requests created | Dashboard | Minor | Low | Chrome 142 / Win11 | At least one request created with a date | 1. Create a pickup request 2. Open Dashboard 3. Check Requests Per Month chart | Chart displays bars for months with requests | Chart renders with no bars | Open | Unassigned | 2025-11-11 | Screenshot of empty chart | Visual metric does not represent current requests |
-
+| | | | | | | | | | | | | | | |
 
 ---
 
