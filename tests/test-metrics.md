@@ -1,6 +1,6 @@
 ## CleanCity Test Metrics
 
-Document Version: 1.4  
+Document Version: 1.5  
 Date: November 18, 2025  
 Scope: Results against `tests/test-case.md` (total 59 cases)
 
@@ -9,13 +9,13 @@ Scope: Results against `tests/test-case.md` (total 59 cases)
 ### Summary
 
 - Total: 59
-- Passed: 38
-- Failed: 21
+- Passed: 37
+- Failed: 22
 - Blocked: 0
 - Not Run: 0
 
-Pass Rate = 38 / 59 ≈ 64.4%  
-Fail Rate = 21 / 59 ≈ 35.6%
+Pass Rate = 37 / 59 ≈ 62.7%  
+Fail Rate = 22 / 59 ≈ 37.3%
 
 ---
 
@@ -35,14 +35,14 @@ Fail Rate = 21 / 59 ≈ 35.6%
 | Validation & Errors | 3 | 3 | 0 | 0 | 0 |
 | Accessibility | 5 | 4 | 1 | 0 | 0 |
 | Performance | 4 | 4 | 0 | 0 | 0 |
-| Security | 3 | 3 | 0 | 0 | 0 |
+| Security | 3 | 2 | 1 | 0 | 0 |
 | Compatibility/Responsive | 3 | 3 | 0 | 0 | 0 |
 | Negative/Edge | 3 | 3 | 0 | 0 | 0 |
 
 Notes:
 - All 59 test cases have been executed.
-- 38 test cases passed (64.4% pass rate).
-- 21 test cases failed (35.6% fail rate).
+- 37 test cases passed (62.7% pass rate).
+- 22 test cases failed (37.3% fail rate).
 - All failures are documented with corresponding defects in `tests/defect-log.md`.
 - Test execution is complete.
 
@@ -81,7 +81,6 @@ Notes:
 | PERF-004 | Memory usage check | Passed | No significant memory leaks detected |
 | SEC-001 | XSS in form inputs | Passed | XSS payloads properly handled |
 | SEC-002 | URL parameter injection | Passed | URL injection attempts handled safely |
-| SEC-003 | Storage tampering | Passed | localStorage tampering properly validated |
 | COMP-001 | Cross-browser support (smoke) | Passed | Chrome/Edge basic nav works |
 | COMP-002 | Responsive layouts (spot check) | Passed | Key pages adapt in DevTools |
 | COMP-003 | Orientation changes | Passed | UI adapts to orientation changes |
@@ -117,6 +116,7 @@ Notes:
 | PROF-003 | "My Comments" displays user's blog comments | Failed | Blog comments don't appear in "My Comments" (BUG-013) |
 | QUIZ-001 | Quiz shows completion screen after answering all questions | Failed | Quiz has no completion screen and keeps recurring (BUG-012) |
 | A11Y-005 | Page has proper heading structure | Failed | Page lacks proper heading structure (BUG-015) |
+| SEC-003 | Storage tampering | Failed | localStorage tampering not properly validated; privilege escalation possible |
 
 ---
 
@@ -128,8 +128,8 @@ All 59 test cases have been executed. Results are documented above in Known Pass
 
 ### Next Actions
 
-- **Critical Priority:** Fix authentication validation (AUTH-002/BUG-008) and admin functionality (ADMIN-001/BUG-014, ADMIN-002/BUG-022, ADMIN-003/BUG-023, ADMIN-004/BUG-024)  
+- **Critical Priority:** Fix authentication validation (AUTH-002/BUG-008), storage tampering/privilege escalation (SEC-003/BUG-025), and admin functionality (ADMIN-001/BUG-014, ADMIN-002/BUG-022, ADMIN-003/BUG-023, ADMIN-004/BUG-024)  
 - **High Priority:** Fix duplicate registration (AUTH-009/BUG-009), past date validation (PICK-002/BUG-011), duplicate pickup submissions (PICK-008/BUG-010), and duplicate date prevention (PICK-005/BUG-017)  
 - **Medium Priority:** Fix scheduling persistence (PICK-001), dashboard data visibility (DASH-001/002), profile functionality (PROF-002/003), quiz completion (QUIZ-001), accessibility heading structure (A11Y-005/BUG-015), and request management (PICK-006/007/BUG-018/BUG-019)  
-- After fixes, re-run all 21 failed test cases for regression testing
+- After fixes, re-run all 22 failed test cases for regression testing
 - All test cases have been executed; focus now on defect resolution and retesting

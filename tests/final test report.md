@@ -21,8 +21,8 @@ This report presents the results of comprehensive testing conducted on the Clean
 - **Test Execution:** All 59 planned test cases were executed (100% execution rate)
 - **Pass Rate:** 38 test cases passed (64.4% pass rate)
 - **Fail Rate:** 21 test cases failed (35.6% fail rate)
-- **Total Defects:** 23 defects identified and documented
-- **Critical Issues:** 2 critical security and functionality issues identified (authentication validation and admin request visibility)
+- **Total Defects:** 24 defects identified and documented
+- **Critical Issues:** 3 critical security and functionality issues identified (authentication validation, admin request visibility, and storage tampering/privilege escalation)
 - **Core Functionality:** Basic user features (login, registration, navigation) function correctly
 - **Major Concerns:** Admin panel functionality completely non-functional; pickup scheduling has data persistence issues; authentication lacks proper validation
 
@@ -298,11 +298,11 @@ A total of 23 defects were identified during the testing cycle, categorized by s
 
 | Severity | Count | Percentage | Status |
 |:---------|:------|:-----------|:------|
-| Critical | 2 | 8.7% | Open |
-| Major | 15 | 65.2% | Open |
-| Minor | 4 | 17.4% | Open |
-| Medium | 2 | 8.7% | Open |
-| **Total** | **23** | **100%** | **All Open** |
+| Critical | 3 | 12.5% | Open |
+| Major | 15 | 62.5% | Open |
+| Minor | 4 | 16.7% | Open |
+| Medium | 2 | 8.3% | Open |
+| **Total** | **24** | **100%** | **All Open** |
 
 ### 5.2 Defect Distribution by Module
 
@@ -316,7 +316,8 @@ A total of 23 defects were identified during the testing cycle, categorized by s
 | Profile | 0 | 1 | 1 | 0 | 2 |
 | Awareness/Quiz | 0 | 1 | 0 | 0 | 1 |
 | Accessibility | 0 | 1 | 0 | 2 | 3 |
-| **Total** | **2** | **15** | **3** | **2** | **23** |
+| Security | 1 | 0 | 0 | 0 | 1 |
+| **Total** | **3** | **15** | **3** | **2** | **24** |
 
 ### 5.3 Critical Defects
 
@@ -336,6 +337,14 @@ A total of 23 defects were identified during the testing cycle, categorized by s
 - **Status:** Open
 - **Recommendation:** Immediate fix required; blocks admin workflow entirely
 
+#### **BUG-025: Storage tampering allows privilege escalation**
+- **Severity:** Critical
+- **Priority:** High
+- **Module:** Security
+- **Impact:** Critical security vulnerability - users can escalate privileges by tampering with localStorage
+- **Status:** Open
+- **Recommendation:** Immediate fix required; security vulnerability allows unauthorized admin access
+
 ### 5.4 High-Priority Defects
 
 Key high-priority defects include:
@@ -350,7 +359,7 @@ Key high-priority defects include:
 
 | Status | Count | Percentage |
 |:-------|:------|:-----------|
-| Open | 23 | 100% |
+| Open | 24 | 100% |
 | In Progress | 0 | 0% |
 | Fixed | 0 | 0% |
 | Closed | 0 | 0% |
@@ -407,11 +416,11 @@ Testing was performed on the following device configurations:
 
 - **Test Cases Planned:** 59
 - **Test Cases Executed:** 59 (100%)
-- **Test Case Pass Rate:** 38 passed (64.4%)
-- **Test Case Fail Rate:** 21 failed (35.6%)
+- **Test Case Pass Rate:** 37 passed (62.7%)
+- **Test Case Fail Rate:** 22 failed (37.3%)
 - **Automation Coverage:** 0% (all manual testing)
 - **Code Coverage:** N/A (black-box testing only)
-- **Critical User Journeys:** 40% passing (6 out of 15 critical journeys verified)
+- **Critical User Journeys:** 37% passing (6 out of 16 critical journeys verified)
 
 ### 7.2 Quality Assessment
 
@@ -427,7 +436,7 @@ Based on our testing results, the CleanCity v1.0 application has **NOT reached a
 - Responsive design adapts to different screen sizes
 
 #### **Critical Areas of Concern:**
-1. **Security Vulnerability:** Login accepts any credentials without validation (BUG-008) - **CRITICAL**
+1. **Security Vulnerabilities:** Login accepts any credentials without validation (BUG-008) and localStorage tampering allows privilege escalation (BUG-025) - **CRITICAL**
 2. **Admin Functionality:** Complete failure of admin panel - cannot view, approve, or reject requests (BUG-014, BUG-022, BUG-023, BUG-024) - **CRITICAL**
 3. **Data Persistence:** Pickup requests are created but not visible in dashboard or history (BUG-001, PICK-001) - **MAJOR**
 4. **Data Integrity:** Duplicate registrations, duplicate pickups, and past date scheduling allowed (BUG-009, BUG-010, BUG-011, BUG-017) - **MAJOR**
@@ -440,10 +449,10 @@ Based on our testing results, the CleanCity v1.0 application has **NOT reached a
 
 The risks associated with releasing the application in its current state are:
 
-#### **1. Security Vulnerability (BUG-008): HIGH RISK**
-- **Impact:** Critical - Any unauthorized user can access any account
-- **Likelihood:** High - Vulnerability is easily exploitable
-- **Mitigation:** Implement proper authentication validation before any release consideration
+#### **1. Security Vulnerabilities (BUG-008, BUG-025): HIGH RISK**
+- **Impact:** Critical - Any unauthorized user can access any account (BUG-008) and escalate privileges (BUG-025)
+- **Likelihood:** High - Vulnerabilities are easily exploitable
+- **Mitigation:** Implement proper authentication validation and localStorage data validation before any release consideration
 
 #### **2. Admin Functionality Failure: HIGH RISK**
 - **Impact:** Critical - Admin users cannot perform their core responsibilities
@@ -475,6 +484,7 @@ Based on our comprehensive testing and the current status of the application, th
 
 1. **Critical Priority (Must Fix):**
    - Fix authentication validation (BUG-008) - Security vulnerability
+   - Fix storage tampering/privilege escalation (BUG-025) - Critical security vulnerability
    - Fix admin functionality (BUG-014, BUG-022, BUG-023, BUG-024) - Core admin features
    - Fix data persistence (BUG-001, PICK-001) - Core user functionality
 
@@ -584,9 +594,9 @@ Detailed test case execution results are available in:
 ### 10.2 Defect Details
 
 Complete details of all defects, including:
-- **Defect Log:** `tests/defect-log.md` (23 defects with full details)
-- **Defect IDs:** BUG-001 through BUG-024 (BUG-020 removed as test passed)
-- **Severity Distribution:** 2 Critical, 15 Major, 3 Minor, 2 Medium, 1 removed
+- **Defect Log:** `tests/defect-log.md` (24 defects with full details)
+- **Defect IDs:** BUG-001 through BUG-025 (BUG-020 removed as test passed)
+- **Severity Distribution:** 3 Critical, 15 Major, 3 Minor, 2 Medium, 1 removed
 
 ### 10.3 Test Data Used
 

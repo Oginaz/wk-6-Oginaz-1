@@ -1,6 +1,6 @@
 ## CleanCity Defect Log
 
-Document Version: 1.5  
+Document Version: 1.6  
 Date: November 18, 2025  
 Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 
@@ -60,6 +60,7 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 | BUG-022 | Approve pending request functionality not working | Admin | Major | High | Chrome 142 / Win11 | Logged in as admin; pending request exists | 1. Login as admin 2. Open Admin panel 3. Select a pending request 4. Click Approve button | Request status should change to Confirmed; approval action completes | Approve action does not work; status does not change; request remains Pending | Open | Unassigned | 2025-11-18 | Screenshot of approve attempt | Approve functionality broken or not implemented |
 | BUG-023 | Reject pending request functionality not working | Admin | Major | High | Chrome 142 / Win11 | Logged in as admin; pending request exists | 1. Login as admin 2. Open Admin panel 3. Select a pending request 4. Click Reject button | Request status should change to Rejected/Cancelled; rejection action completes | Reject action does not work; status does not change; request remains Pending | Open | Unassigned | 2025-11-18 | Screenshot of reject attempt | Reject functionality broken or not implemented |
 | BUG-024 | Admin cannot view requests created by users | Admin | Critical | High | Chrome 142 / Win11 | Logged in as admin; user has created requests | 1. Login as regular user 2. Create pickup request 3. Logout 4. Login as admin 5. Open Admin panel 6. View Requests | Admin should see all requests created by users in the requests list | Admin panel shows no requests; requests list is empty; cannot view user requests | Open | Unassigned | 2025-11-18 | Screenshot of admin panel | Critical admin functionality failure - cannot view user requests |
+| BUG-025 | Storage tampering allows privilege escalation | Security | Critical | High | Chrome 142 / Win11 | App uses localStorage; Chrome DevTools available | 1. Login as regular user 2. Open Chrome DevTools (F12) 3. Go to Application tab > Local Storage 4. Find user data (role: "User") 5. Manually edit role to "Admin" in localStorage 6. Reload the page (F5) 7. Try to access admin routes | App should validate localStorage data; role changes should not be honored without proper authentication; no privilege escalation | Role change is honored; user gains admin access; privilege escalation possible | Open | Unassigned | 2025-11-18 | Screenshot of localStorage edit and admin access | Critical security vulnerability - localStorage tampering allows privilege escalation |
 
 ---
 
@@ -74,7 +75,7 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 - FR-XXX Admin functionality: BUG-014, BUG-022, BUG-023, BUG-024  
 - Non-functional data integrity/consistency: BUG-001, BUG-004, BUG-005, BUG-006, BUG-007, BUG-009, BUG-010, BUG-016, BUG-017  
 - Accessibility: BUG-006, BUG-007, BUG-015  
-- Security: BUG-008
+- Security: BUG-008, BUG-025
 
 ---
 
