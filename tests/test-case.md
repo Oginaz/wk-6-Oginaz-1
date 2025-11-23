@@ -2,23 +2,23 @@
   
 Date: November 18, 2025  
 
-- Total test cases: 51
+- Total test cases: 60
 - By area:
-  - Authentication: 7
-  - Pickup Scheduling: 7
+  - Authentication: 9
+  - Pickup Scheduling: 9
   - Dashboard and Analytics: 3
-  - Admin: 4
+  - Admin: 5
   - Blog: 3
   - Community Feed: 3
   - Notifications: 2
-  - Profile: 2
+  - Profile: 3
+  - Awareness/Quiz: 1
   - Validation and Error Handling: 3
-  - Accessibility (WCAG 2.1 AA): 4
+  - Accessibility (WCAG 2.1 AA): 5
   - Performance: 4
   - Security: 3
   - Compatibility and Responsiveness: 3
   - Negative and Edge Cases: 3
-
 
 ### Authentication
 
@@ -31,7 +31,8 @@ Date: November 18, 2025
 | AUTH-005 | Logout clears session | Logged-in user | N/A | 1) Click Logout in navbar | Session cleared from localStorage; user redirected to Landing/Login |
 | AUTH-006 | Role-based access to Admin | Logged-in as non-admin | N/A | 1) Visit /admin | Access denied or redirect to Login; no admin UI visible |
 | AUTH-007 | Admin access allowed | Logged-in as admin@cleancity.com | N/A | 1) Visit /admin | Admin UI visible; requests/users lists load |
-
+| AUTH-008 | Login validation rejects invalid credentials | App loaded; no active session | Email: fake@test.com, Password: wrongpass123 | 1) Open Login 2) Enter invalid credentials 3) Click Login | Error message displayed; user remains logged out; no session stored; login fails |
+| AUTH-009 | Registration prevents duplicate email addresses | App loaded; email already registered | Email: existing@test.com (already registered), Password: NewPass123, Confirm: NewPass123, Name: New User, Phone: +1-555-0000 | 1) Open Register 2) Enter email that already exists 3) Fill other fields 4) Submit | Error message indicating email already exists; registration fails; no duplicate account created |
 
 ### Pickup Scheduling
 
@@ -44,6 +45,8 @@ Date: November 18, 2025
 | PICK-005 | Single pickup per date per user | User has existing request on date D | Date: D | 1) Submit pickup for same date 2) Submit | Error preventing duplicate date; only one request for D |
 | PICK-006 | Cancel pending request | User has Pending request | N/A | 1) Open history 2) Cancel request | Status becomes Cancelled; record retained |
 | PICK-007 | Modify before 24h window | Pending request >24h away | Change Qty: Large | 1) Edit request 2) Save | Request updated; audit or updated timestamp shown (if available) |
+| PICK-008 | Prevent duplicate pickup submissions with identical data | Logged-in user | Date: Tomorrow; Waste: General; Qty: Medium; Instr: "Same instructions" | 1) Submit pickup with data 2) Submit another pickup with exact same data immediately | System prevents duplicate or shows warning; only one request created |
+| PICK-009 | Past date validation enforced | Logged-in user | Date: Yesterday (past date) | 1) Go to Schedule 2) Select past date 3) Fill other fields 4) Submit | Date picker prevents past date selection OR validation error shown; no request created with past date |
 
 ---
 
@@ -65,6 +68,7 @@ Date: November 18, 2025
 | ADMIN-002 | Approve a pending request | Logged in as admin | Pending request exists | 1) Select request 2) Approve | Status changes to Confirmed; user notification generated (if supported) |
 | ADMIN-003 | Reject a pending request | Logged in as admin | Pending request exists | 1) Select request 2) Reject | Status becomes Rejected/Cancelled; reason optional |
 | ADMIN-004 | Change user role | Logged in as admin | User exists | 1) Open Users 2) Set role to Admin/User | Role updated; reflected on next login |
+| ADMIN-005 | Admin sees requests created by all users | Logged in as admin; regular user has created requests | User requests exist in system | 1) Login as regular user 2) Create pickup request 3) Logout 4) Login as admin 5) Open Admin > Requests | Admin panel displays all requests created by users; requests list is populated |
 
 ---
 
@@ -97,12 +101,21 @@ Date: November 18, 2025
 
 ---
 
+### Awareness/Quiz
+
+| ID | Title | Preconditions | Test Data | Steps | Expected Result |
+|---|---|---|---|---|---|
+| QUIZ-001 | Quiz shows completion screen after answering all questions | User navigates to Awareness section | Quiz with 3 questions | 1) Go to Awareness page 2) Answer all 3 quiz questions 3) Submit answers | Quiz displays completion screen/confirmation; quiz does not recur after completion |
+
+---
+
 ### Profile
 
 | ID | Title | Preconditions | Test Data | Steps | Expected Result |
 |---|---|---|---|---|---|
 | PROF-001 | View and edit profile | Logged-in user | Name/Phone updates | 1) Open Profile 2) Edit details 3) Save | Profile persists in localStorage; updates reflected in UI |
 | PROF-002 | Upload/change avatar (if present) | Logged-in user | Image file | 1) Upload avatar 2) Save | Avatar displays in profile; persists across sessions |
+| PROF-003 | "My Comments" displays user's blog comments | Logged-in user; user has commented on blog posts | User has made comments on blog posts | 1) Login as user 2) Go to Blog 3) Add comment on a post 4) Go to Profile 5) Check "My Comments" section | User's comments are listed in "My Comments" section; all user comments visible |
 
 ---
 
@@ -124,6 +137,7 @@ Date: November 18, 2025
 | A11Y-002 | Screen reader labels | Screen reader enabled | N/A | 1) Navigate Login, Forms, Nav | Elements have meaningful labels/roles; announcements correct |
 | A11Y-003 | Color contrast | N/A | N/A | 1) Audit with axe/WAVE | There is contrast violations for color |
 | A11Y-004 | Alt text for images | N/A | N/A | 1) Inspect images | Informative images have alt text; decorative have empty alt |
+| A11Y-005 | Page has proper heading structure | WAVE Accessibility Tool installed | N/A | 1) Go to application URL 2) Open WAVE extension 3) Scan the page 4) Check for heading structure | Page should have a logical heading hierarchy (h1, h2, h3, etc.); no "No heading structure" alert |
 
 ---
 
