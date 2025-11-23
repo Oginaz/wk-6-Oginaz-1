@@ -1,6 +1,6 @@
 ## CleanCity Defect Log
 
-Document Version: 1.4  
+Document Version: 1.5  
 Date: November 18, 2025  
 Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 
@@ -56,7 +56,6 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 | BUG-017 | Duplicate pickups allowed for same date per user | Pickup Scheduling | Major | High | Chrome 142 / Win11 | Logged-in user with existing request | 1. Create pickup request for date D 2. Create another pickup request for same date D 3. Submit both | System should prevent duplicate date; only one request per date allowed | Multiple requests created for same date; duplicate prevention not working | Open | Unassigned | 2025-11-18 | Screenshot of duplicate date requests | Business logic violation - allows multiple pickups same date |
 | BUG-018 | Cancel pending request functionality not working | Pickup Scheduling | Major | Medium | Chrome 142 / Win11 | User has Pending request | 1. Open request history 2. Locate pending request 3. Click Cancel button | Request status should change to Cancelled; record retained with updated status | Cancel action does not work; status remains Pending; request not cancelled | Open | Unassigned | 2025-11-18 | Screenshot of cancel attempt | Cancel functionality broken or not implemented |
 | BUG-019 | Modify/edit request functionality not working | Pickup Scheduling | Major | Medium | Chrome 142 / Win11 | User has Pending request >24h away | 1. Open request history 2. Locate pending request 3. Click Edit/Modify 4. Change quantity or other fields 5. Save | Request should be updated with new values; timestamp or audit trail shown | Edit functionality not working; request not updated; changes not saved | Open | Unassigned | 2025-11-18 | Screenshot of edit attempt | Edit/modify functionality broken or not implemented |
-| BUG-020 | Profile name update not working or not persisting | Profile | Major | Medium | Chrome 142 / Win11 | Logged-in user | 1. Open Profile page 2. Edit name field 3. Enter new name 4. Click Save | Profile name should update and persist in localStorage; new name reflected in UI | Name update does not save; changes lost on refresh; name not updated | Open | Unassigned | 2025-11-18 | Screenshot of profile edit | Profile name update functionality broken |
 | BUG-021 | Avatar upload functionality not available | Profile | Minor | Low | Chrome 142 / Win11 | Logged-in user | 1. Open Profile page 2. Look for avatar upload option 3. Attempt to upload image file | Avatar upload feature should be available; image uploads and displays | No avatar upload option visible; upload functionality missing | Open | Unassigned | 2025-11-18 | Screenshot of profile page | Avatar upload feature not implemented or hidden |
 | BUG-022 | Approve pending request functionality not working | Admin | Major | High | Chrome 142 / Win11 | Logged in as admin; pending request exists | 1. Login as admin 2. Open Admin panel 3. Select a pending request 4. Click Approve button | Request status should change to Confirmed; approval action completes | Approve action does not work; status does not change; request remains Pending | Open | Unassigned | 2025-11-18 | Screenshot of approve attempt | Approve functionality broken or not implemented |
 | BUG-023 | Reject pending request functionality not working | Admin | Major | High | Chrome 142 / Win11 | Logged in as admin; pending request exists | 1. Login as admin 2. Open Admin panel 3. Select a pending request 4. Click Reject button | Request status should change to Rejected/Cancelled; rejection action completes | Reject action does not work; status does not change; request remains Pending | Open | Unassigned | 2025-11-18 | Screenshot of reject attempt | Reject functionality broken or not implemented |
@@ -70,7 +69,7 @@ Tooling: Jira or GitHub Projects (use this file to mirror/export summary)
 - FR-016/019 Request management visibility: BUG-002, BUG-004, BUG-014, BUG-022, BUG-023, BUG-024  
 - FR-012 Scheduling persistence: BUG-002, BUG-010, BUG-011, BUG-016, BUG-017, BUG-018, BUG-019  
 - FR-XXX Authentication validation: BUG-008, BUG-009  
-- FR-XXX Profile data visibility: BUG-004, BUG-013, BUG-020, BUG-021  
+- FR-XXX Profile data visibility: BUG-004, BUG-013, BUG-021  
 - FR-XXX Awareness/Quiz functionality: BUG-012  
 - FR-XXX Admin functionality: BUG-014, BUG-022, BUG-023, BUG-024  
 - Non-functional data integrity/consistency: BUG-001, BUG-004, BUG-005, BUG-006, BUG-007, BUG-009, BUG-010, BUG-016, BUG-017  

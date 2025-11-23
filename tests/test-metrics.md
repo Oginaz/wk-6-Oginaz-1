@@ -9,13 +9,13 @@ Scope: Results against `tests/test-case.md` (total 59 cases)
 ### Summary
 
 - Total: 59
-- Passed: 37
-- Failed: 22
+- Passed: 38
+- Failed: 21
 - Blocked: 0
 - Not Run: 0
 
-Pass Rate = 37 / 59 ≈ 62.7%  
-Fail Rate = 22 / 59 ≈ 37.3%
+Pass Rate = 38 / 59 ≈ 64.4%  
+Fail Rate = 21 / 59 ≈ 35.6%
 
 ---
 
@@ -30,7 +30,7 @@ Fail Rate = 22 / 59 ≈ 37.3%
 | Blog | 3 | 2 | 1 | 0 | 0 |
 | Community | 3 | 2 | 1 | 0 | 0 |
 | Notifications | 2 | 2 | 0 | 0 | 0 |
-| Profile | 3 | 0 | 3 | 0 | 0 |
+| Profile | 3 | 1 | 2 | 0 | 0 |
 | Awareness/Quiz | 1 | 0 | 1 | 0 | 0 |
 | Validation & Errors | 3 | 3 | 0 | 0 | 0 |
 | Accessibility | 5 | 4 | 1 | 0 | 0 |
@@ -41,8 +41,8 @@ Fail Rate = 22 / 59 ≈ 37.3%
 
 Notes:
 - All 59 test cases have been executed.
-- 37 test cases passed (62.7% pass rate).
-- 22 test cases failed (37.3% fail rate).
+- 38 test cases passed (64.4% pass rate).
+- 21 test cases failed (35.6% fail rate).
 - All failures are documented with corresponding defects in `tests/defect-log.md`.
 - Test execution is complete.
 
@@ -88,6 +88,7 @@ Notes:
 | EDGE-001 | Empty/whitespace inputs | Passed | Whitespace properly handled |
 | EDGE-002 | Unicode inputs | Passed | Unicode characters properly handled |
 | EDGE-003 | Large localStorage datasets | Passed | App handles large datasets |
+| PROF-001 | View and edit profile name | Passed | Profile name update works correctly |
 
 ---
 
@@ -112,7 +113,6 @@ Notes:
 | ADMIN-004 | Admin sees requests created by all users | Failed | Admin cannot view user requests |
 | COMM-003 | Comment on a post | Failed | Comment disappears after page refresh |
 | BLOG-003 | Admin creates/edits post | Failed | No visible way to create a blog post as admin |
-| PROF-001 | View and edit profile name | Failed | Profile name update not working or not persisting |
 | PROF-002 | Upload/change avatar | Failed | Avatar upload functionality not available or not working |
 | PROF-003 | "My Comments" displays user's blog comments | Failed | Blog comments don't appear in "My Comments" (BUG-013) |
 | QUIZ-001 | Quiz shows completion screen after answering all questions | Failed | Quiz has no completion screen and keeps recurring (BUG-012) |
@@ -130,6 +130,6 @@ All 59 test cases have been executed. Results are documented above in Known Pass
 
 - **Critical Priority:** Fix authentication validation (AUTH-002/BUG-008) and admin functionality (ADMIN-001/BUG-014, ADMIN-002/BUG-022, ADMIN-003/BUG-023, ADMIN-004/BUG-024)  
 - **High Priority:** Fix duplicate registration (AUTH-009/BUG-009), past date validation (PICK-002/BUG-011), duplicate pickup submissions (PICK-008/BUG-010), and duplicate date prevention (PICK-005/BUG-017)  
-- **Medium Priority:** Fix scheduling persistence (PICK-001), dashboard data visibility (DASH-001/002), profile functionality (PROF-001/002/003), quiz completion (QUIZ-001), accessibility heading structure (A11Y-005/BUG-015), and request management (PICK-006/007/BUG-018/BUG-019)  
-- After fixes, re-run all 22 failed test cases for regression testing
+- **Medium Priority:** Fix scheduling persistence (PICK-001), dashboard data visibility (DASH-001/002), profile functionality (PROF-002/003), quiz completion (QUIZ-001), accessibility heading structure (A11Y-005/BUG-015), and request management (PICK-006/007/BUG-018/BUG-019)  
+- After fixes, re-run all 21 failed test cases for regression testing
 - All test cases have been executed; focus now on defect resolution and retesting
