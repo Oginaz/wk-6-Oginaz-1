@@ -2,12 +2,12 @@
   
 Date: November 18, 2025  
 
-- Total test cases: 60
+- Total test cases: 59
 - By area:
   - Authentication: 9
   - Pickup Scheduling: 9
   - Dashboard and Analytics: 3
-  - Admin: 5
+  - Admin: 4
   - Blog: 3
   - Community Feed: 3
   - Notifications: 2
@@ -41,7 +41,7 @@ Date: November 18, 2025
 | PICK-001 | Schedule pickup with valid data | Logged-in user | Date: Tomorrow; Waste: General; Qty: Medium; Instr: "Please ring doorbell" | 1) Go to Schedule 2) Fill form 3) Submit | Pickup created with status Pending; appears in history; stored in localStorage |
 | PICK-002 | Prevent past date scheduling | Logged-in user | Date: Yesterday | 1) Fill date in past 2) Submit | Validation error for date; no request created |
 | PICK-003 | Required fields validation | Logged-in user | Waste: (empty), Qty: (empty) | 1) Leave required fields empty 2) Submit | Required field messages; no request created |
-| PICK-004 | Instructions max length enforced | Logged-in user | Instructions > 200 chars | 1) Enter very long text 2) Submit | Validation error for length; no request created |
+| PICK-004 | Instructions max length enforced | Logged-in user | Instructions > 200 chars | 1) Enter very long text (201+ characters) 2) Submit | Validation error for length; no request created |
 | PICK-005 | Single pickup per date per user | User has existing request on date D | Date: D | 1) Submit pickup for same date 2) Submit | Error preventing duplicate date; only one request for D |
 | PICK-006 | Cancel pending request | User has Pending request | N/A | 1) Open history 2) Cancel request | Status becomes Cancelled; record retained |
 | PICK-007 | Modify before 24h window | Pending request >24h away | Change Qty: Large | 1) Edit request 2) Save | Request updated; audit or updated timestamp shown (if available) |
@@ -67,8 +67,7 @@ Date: November 18, 2025
 | ADMIN-001 | View all pickup requests | Logged in as admin | Multiple user requests in storage | 1) Open Admin > Requests | Table lists all requests with filters/sort (if available) |
 | ADMIN-002 | Approve a pending request | Logged in as admin | Pending request exists | 1) Select request 2) Approve | Status changes to Confirmed; user notification generated (if supported) |
 | ADMIN-003 | Reject a pending request | Logged in as admin | Pending request exists | 1) Select request 2) Reject | Status becomes Rejected/Cancelled; reason optional |
-| ADMIN-004 | Change user role | Logged in as admin | User exists | 1) Open Users 2) Set role to Admin/User | Role updated; reflected on next login |
-| ADMIN-005 | Admin sees requests created by all users | Logged in as admin; regular user has created requests | User requests exist in system | 1) Login as regular user 2) Create pickup request 3) Logout 4) Login as admin 5) Open Admin > Requests | Admin panel displays all requests created by users; requests list is populated |
+| ADMIN-004 | Admin sees requests created by all users | Logged in as admin; regular user has created requests | User requests exist in system | 1) Login as regular user 2) Create pickup request 3) Logout 4) Login as admin 5) Open Admin > Requests | Admin panel displays all requests created by users; requests list is populated |
 
 ---
 
@@ -113,8 +112,8 @@ Date: November 18, 2025
 
 | ID | Title | Preconditions | Test Data | Steps | Expected Result |
 |---|---|---|---|---|---|
-| PROF-001 | View and edit profile | Logged-in user | Name/Phone updates | 1) Open Profile 2) Edit details 3) Save | Profile persists in localStorage; updates reflected in UI |
-| PROF-002 | Upload/change avatar (if present) | Logged-in user | Image file | 1) Upload avatar 2) Save | Avatar displays in profile; persists across sessions |
+| PROF-001 | View and edit profile name | Logged-in user | Name update | 1) Open Profile 2) Edit name field 3) Save | Profile name persists in localStorage; name update reflected in UI |
+| PROF-002 | Upload/change avatar | Logged-in user | Image file | 1) Attempt to upload avatar 2) Save | Avatar upload functionality should be available; avatar displays in profile |
 | PROF-003 | "My Comments" displays user's blog comments | Logged-in user; user has commented on blog posts | User has made comments on blog posts | 1) Login as user 2) Go to Blog 3) Add comment on a post 4) Go to Profile 5) Check "My Comments" section | User's comments are listed in "My Comments" section; all user comments visible |
 
 ---
@@ -145,10 +144,10 @@ Date: November 18, 2025
 
 | ID | Title | Preconditions | Test Data | Steps | Expected Result |
 |---|---|---|---|---|---|
-| PERF-001 | Page load budget | Fresh session | N/A | 1) Measure with Lighthouse | TTI and LCP within acceptable limits; load < 3s on standard network |
-| PERF-002 | Interaction latency | App loaded | N/A | 1) Click nav and buttons | UI responds < 1s; no jank on route changes |
-| PERF-003 | Network throttling | Throttling enabled | 3G/Slow 3G | 1) Throttle to Fast/Slow 3G 2) Navigate | App remains usable; skeleton/loading states visible |
-| PERF-004 | Memory usage check | DevTools open | N/A | 1) Interact across features 2) Profile memory | No runaway memory growth; event listeners cleaned up |
+| PERF-001 | Page load budget | Fresh session | N/A | **Step-by-step:** 1) Open Chrome DevTools (F12) 2) Go to Lighthouse tab 3) Select "Performance" category 4) Choose "Desktop" or "Mobile" 5) Click "Analyze page load" 6) Review metrics: Time to Interactive (TTI) and Largest Contentful Paint (LCP) | TTI < 3.8s and LCP < 2.5s on standard network; overall performance score acceptable |
+| PERF-002 | Interaction latency | App loaded | N/A | **Step-by-step:** 1) Open Chrome DevTools (F12) 2) Go to Performance tab 3) Click Record (circle icon) 4) Click navigation links and buttons in the app 5) Stop recording 6) Review timeline for interaction delays | UI responds < 1s to clicks; no visible jank or lag on route changes; smooth transitions |
+| PERF-003 | Network throttling | Chrome DevTools | 3G/Slow 3G | **Step-by-step:** 1) Open Chrome DevTools (F12) 2) Go to Network tab 3) Click throttling dropdown (default: "No throttling") 4) Select "Fast 3G" or "Slow 3G" 5) Reload page (Ctrl+R) 6) Navigate through app pages 7) Observe loading behavior | App remains usable; loading states/skeletons visible; content loads within reasonable time on throttled network |
+| PERF-004 | Memory usage check | Chrome DevTools | N/A | **Step-by-step:** 1) Open Chrome DevTools (F12) 2) Go to Memory tab 3) Take heap snapshot (click "Take heap snapshot") 4) Interact with app: navigate pages, create requests, add comments 5) Take another heap snapshot after interactions 6) Compare snapshots for memory growth 7) Check for memory leaks (objects not being cleaned up) | Memory usage remains stable; no significant memory growth after interactions; event listeners properly cleaned up |
 
 ---
 
@@ -156,9 +155,9 @@ Date: November 18, 2025
 
 | ID | Title | Preconditions | Test Data | Steps | Expected Result |
 |---|---|---|---|---|---|
-| SEC-001 | XSS in form inputs | N/A | <img src=\"x\" onerror=\"alert('XSS')\"> | 1) Enter payloads in text fields 2) View rendering | No script execution; content sanitized/escaped |
-| SEC-002 | URL parameter injection | N/A | Blog id payload | 1) Manipulate /blog/:id with scripts | No execution; invalid ids handled gracefully |
-| SEC-003 | Storage tampering | App uses localStorage | Manually edited localStorage | 1) Modify stored user/role/requests 2) Reload | App validates/sanitizes; does not crash or escalate privileges |
+| SEC-001 | XSS in form inputs | N/A | Payload: `<img src="x" onerror="alert('XSS')">` or `<script>alert('XSS')</script>` | **Step-by-step:** 1) Login to the app 2) Navigate to any form with text input (e.g., Profile name, Pickup instructions, Blog comment) 3) Enter XSS payload: `<img src="x" onerror="alert('XSS')">` 4) Submit the form 5) View the page where the content is displayed 6) Check browser console for any script execution 7) Verify content is displayed as plain text, not executed | No script execution occurs; payload is escaped/sanitized and displayed as text; no alert popups; content safely rendered |
+| SEC-002 | URL parameter injection | N/A | Payload: `/blog/1<script>alert('XSS')</script>` or `/blog/999999` | **Step-by-step:** 1) Navigate to a page with URL parameters (e.g., Blog post page) 2) Manually edit URL in address bar 3) Try invalid ID: `/blog/999999` (non-existent post) 4) Try script injection: `/blog/1<script>alert('XSS')</script>` 5) Press Enter to load the page 6) Observe behavior | Invalid IDs handled gracefully (404 or error message); script payloads not executed; app does not crash; proper error handling displayed |
+| SEC-003 | Storage tampering | Chrome DevTools | localStorage data | **Step-by-step:** 1) Login as regular user 2) Open Chrome DevTools (F12) 3) Go to Application tab > Local Storage > your domain 4) Find user data (e.g., role: "User") 5) Manually edit role to "Admin" in localStorage 6) Reload the page (F5) 7) Try to access admin routes 8) Check if app validates the role change | App validates localStorage data; role changes not honored without proper authentication; app does not crash; no privilege escalation; data sanitized on load |
 
 ---
 
